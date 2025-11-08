@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: sub_manager_backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+    restart: on-failure
+
+  db:
+    image: postgres:15-alpine
+    container_name: sub_manager_db
+    env_file:
+      - ./backend/.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

@@ -1,0 +1,5 @@
+{
+  "name": "SaaS Subscription Manager",
+  "description": "A sleek and modern frontend for managing user subscriptions, displaying pricing plans, handling payments, and viewing billing history. Built with React, TypeScript, and Tailwind CSS.",
+  "requestFramePermissions": []
+}
